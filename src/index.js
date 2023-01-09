@@ -1,6 +1,7 @@
 const $links = document.getElementById('links');
 const $name = document.querySelector('h1');
 const $description = document.getElementById('description')
+const $text = document.getElementById('text')
 const data = {
     name: "Santiago Valdivia",
     nickname: "spvs",
@@ -53,6 +54,13 @@ const data = {
     ],
     footer: "Made with Love on Argentina",
 };
+const name =()=> {
+    let name =  document.createTextNode(data?.name);
+    let text =  document.createTextNode(data?.tecnologias);
+    $name.appendChild(name);
+    $text.appendChild(text);
+}
+
  const descrip =() => {
     let description = document.createTextNode(data?.description);
     $description.appendChild(description);
@@ -73,5 +81,6 @@ const main = () => {
     newItem.innerHTML = links;
     $links.appendChild(newItem);
 }
-main();
+name();
 descrip();
+main();
